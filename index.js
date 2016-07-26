@@ -1,28 +1,32 @@
-const AddIn = ({ message }) => {
-    let  msg = 'hello';
-    if (message) { msg = message; }
+class AddIn {
 
-    this.goBig = () => {
-        return AddIn.goBig(msg);
-    };
-
-    this.goSmall = () => {
-        return AddIn.goSmall(msg);
-    };
-};
-
-AddIn.goBig = (message) => {
-    return message.toLocaleUpperCase();
-};
-
-AddIn.goSmall = (message) => {
-    return message.toLocaleLowerCase();
-};
-
-AddIn.callback = (callback) => {
-    if (callback) {
-        callback();
+    constructor ({ message }) {
+        this.message = 'hello';
+        if (message) {
+            this.message = message;
+        }
     }
-};
+    goBig() {
+        return AddIn.goBig(this.message);
+    }
+
+    goSmall() {
+        return AddIn.goSmall(this.message);
+    }
+
+    static goBig(message) {
+        return message.toLocaleUpperCase();
+    };
+
+    static goSmall(message) {
+        return message.toLocaleLowerCase();
+    };
+
+    static callback(callback) {
+        if (callback) {
+            callback();
+        }
+    }
+}
 
 module.exports = AddIn;
