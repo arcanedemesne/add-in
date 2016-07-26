@@ -1,0 +1,24 @@
+{
+  "name": "add-in",
+  "version": "1.0.0",
+  "description": "This is a sample project to turn into an npm package!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arcanedemesne/add-in.git"
+  },
+  "keywords": [
+    "sample",
+    "add-in",
+    "casing"
+  ],
+  "author": "Jennifer Allen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/arcanedemesne/add-in/issues"
+  },
+  "homepage": "https://github.com/arcanedemesne/add-in#readme"
+}
