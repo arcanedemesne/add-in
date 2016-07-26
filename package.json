@@ -2,8 +2,8 @@
   "name": "add-in",
   "version": "1.0.0",
   "description": "This is a sample project to turn into an npm package!",
+  "main": "build/index.html",
   "scripts": {
-    "main": "build/bundle.js",
     "prestart": "babel-node tools/prestart.js",
     "start": "npm-run-all --parallel open:src",
     "open:src": "babel-node tools/server.js",
@@ -20,8 +20,7 @@
   },
   "keywords": [
     "sample",
-    "add-in",
-    "casing"
+    "add-in"
   ],
   "author": "Jennifer Allen",
   "license": "MIT",
@@ -36,6 +35,9 @@
     "babel-preset-es2015": "^6.9.0",
     "babel-register": "^6.11.5",
     "colors": "^1.1.2",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "file-loader": "^0.9.0",
+    "html-loader": "^0.4.3",
     "npm-run-all": "^2.3.0",
     "open": "0.0.5",
     "rimraf": "^2.5.4",

@@ -2,9 +2,7 @@ import webpack from 'webpack';
 import webpackConfig from '../webpack.config.prod';
 import colors from 'colors';
 
-const env = 'prod';
-
-process.env.NODE_ENV = env;
+process.env.NODE_ENV = 'prod';
 
 const msgStart = `Generating minified bundle for production via Webpack for production. This will take a moment...`;
 console.log(msgStart.blue);
