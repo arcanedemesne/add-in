@@ -29,4 +29,4 @@ class AddIn {
     }
 }
 
-module.exports = AddIn;
+export default AddIn;
