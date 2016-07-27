@@ -10,7 +10,7 @@ export default {
     devtool: 'cheap-module-eval-source-map',
     noInfo: false,
     entry: [
-        './src/index'
+        './src/index.jsx'
     ],
     target: 'web',
     output: {
