@@ -1,18 +1,13 @@
 {
   "name": "add-in",
-  "version": "1.0.0",
-  "description": "This is a sample project to turn into an npm package!",
-  "main": "build/bundle.js",
+  "version": "1.0.1",
+  "description": "This is a React Application project to turn into an npm package!",
   "scripts": {
-    "prestart": "babel-node tools/prestart.js",
-    "start": "npm-run-all --parallel open:src",
-    "open:src": "babel-node tools/server.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "clean-build": "npm run remove-build && mkdir build",
-    "remove-build": "node_modules/.bin/rimraf ./build",
-    "prebuild": "npm-run-all clean-build",
-    "build": "babel-node tools/build.js",
-    "postbuild": "babel-node tools/postbuild.js"
+    "prepublish": "babel lib --ignore __tests__ --out-dir ./dist",
+    "lint": "eslint ./lib",
+    "lintfix": "eslint ./lib --fix",
+    "testonly": "mocha $npm_package_options_mocha",
+    "test": "npm run lint && npm run testonly"
   },
   "repository": {
     "type": "git",
@@ -29,22 +24,32 @@
   },
   "homepage": "https://github.com/arcanedemesne/add-in#readme",
   "devDependencies": {
-    "babel-cli": "^6.11.4",
-    "babel-core": "^6.11.4",
-    "babel-loader": "^6.2.4",
-    "babel-preset-es2015": "^6.9.0",
-    "babel-preset-react": "^6.11.1",
-    "babel-preset-react-hmre": "^1.1.1",
-    "babel-register": "^6.11.5",
-    "colors": "^1.1.2",
-    "npm-run-all": "^2.3.0",
-    "open": "0.0.5",
-    "react": "^15.2.1",
-    "react-dom": "^15.2.1",
-    "react-router": "^2.6.0",
-    "rimraf": "^2.5.4",
-    "webpack": "^1.13.1",
-    "webpack-dev-server": "^1.14.1",
-    "webpack-hot-middleware": "^2.12.2"
+    "babel-cli": "^6.6.4",
+    "babel-core": "^6.7.4",
+    "babel-eslint": "^6.0.4",
+    "babel-plugin-transform-es2015-modules-umd": "^6.8.0",
+    "babel-plugin-transform-runtime": "^6.6.0",
+    "babel-polyfill": "^6.7.4",
+    "babel-preset-es2015": "^6.6.0",
+    "babel-preset-react": "^6.5.0",
+    "babel-preset-stage-2": "^6.5.0",
+    "chai": "^3.5.0",
+    "enzyme": "^2.2.0",
+    "eslint": "^2.5.0",
+    "eslint-plugin-babel": "^3.1.0",
+    "eslint-plugin-react": "^4.2.3",
+    "jsdom": "^8.1.0",
+    "mocha": "^2.4.5",
+    "nodemon": "^1.9.1",
+    "react": "~15.2.1",
+    "react-addons-test-utils": "^15.2.1",
+    "react-dom": "~15.0.0"
+  },
+  "peerDependencies": {
+    "react": "~0.14.3 || ^15.2.1",
+    "react-dom": "~0.14.3 || ^15.0.0"
+  },
+  "dependencies": {
+    "babel-runtime": "^6.6.1"
   }
 }
